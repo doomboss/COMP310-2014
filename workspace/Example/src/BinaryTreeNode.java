@@ -31,6 +31,12 @@ public class BinaryTreeNode
 			// put it there
 			
 		}
+		
+		public boolean contains(DataType moreData){
+			
+			return false;
+		}
+		
 		public static void main(String[] args){
 			System.out.println("Hello".compareTo("World"));
 		}
