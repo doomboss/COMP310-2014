@@ -19,8 +19,15 @@ public class Node<Type> {
 	public Node<Type> getNext() {
 		return next;
 	}
-	public void setNext(Node<Type> node) {
-		this.next = node; //thing1.next = thing2
-		node.prev = this; //thing2.prev = thing1
+	public void setNext(Node<Type> node /* thing2 */) {
+		this.next = node; // thing1.next = thing2
+		node.prev = this; // thing2.prev = thing1
+	}
+	public Node<Type> getPrev() {
+		return prev;
+	}
+	public void setPrev(Node<Type> node /* thing0 */) {
+		this.prev = node; // thing1.prev = thing0
+		node.next = this; // thing0.next = thing1
 	}
 }

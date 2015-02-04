@@ -1,6 +1,7 @@
 
 public class BinaryTreeNode
-	<DataType extends Comparable<DataType>>{
+	<DataType extends Comparable<DataType>>
+{
 		DataType data;
 		BinaryTreeNode<DataType>left,right;
 		BinaryTreeNode(DataType data){
@@ -11,15 +12,16 @@ public class BinaryTreeNode
 			if(data.compareTo(moreData) <= 0){
 				// goes to right hand side
 				if(right == null){
-					//create node
+				// create a node with the data and call it a day
 					right = new BinaryTreeNode<DataType>(moreData);
-				}
-				else{
+			} else {
+				// keep looking recursively
 					right.add(moreData);
 
 				}
 			}
-			else{
+		} else {
+			// it goes to the left
 				if (left == null) {
 					// create a node and call it a day
 					left = new BinaryTreeNode<DataType>(moreData);
@@ -31,13 +33,13 @@ public class BinaryTreeNode
 			// put it there
 			
 		}
-		
-		public boolean contains(DataType moreData){
-			
+	// Can you write this function?
+	// Hint: try doing what you do in the add function
+	boolean contains (DataType moreData) {
 			return false;
 		}
 		
-		public static void main(String[] args){
-			System.out.println("Hello".compareTo("World"));
-		}
+	public static void main(String[] args) {
+		System.out.println("Hello".compareTo("World"));
 	}
+}

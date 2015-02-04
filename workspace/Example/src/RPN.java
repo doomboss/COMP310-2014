@@ -98,4 +98,7 @@ public class RPN {
 	void clear(){
 		stack.clear();
 	}
+	void clear() {
+		stack.clear();
+	}
 }
