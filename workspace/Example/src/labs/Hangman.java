@@ -1,10 +1,34 @@
 package labs;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
 
 public class Hangman {
 	private String word;
+	HashMap<Integer, ArrayList<String>> library = new HashMap<Integer, ArrayList<String>>();
+	private int totalguesses, wordlength, maxwordlength;
+	
+	public int getMaxwordlength() {
+		return maxwordlength;
+	}
+	public void setMaxwordlength(int maxwordlength) {
+		this.maxwordlength = maxwordlength;
+	}
+	public int getWordlength() {
+		return wordlength;
+	}
+	public void setWordlength(int wordlength) {
+		this.wordlength = wordlength;
+	}
+	public int getTotalguesses() {
+		return totalguesses;
+	}
+	public void setTotalguesses(int totalguesses) {
+		this.totalguesses = totalguesses;
+	}
 	private Set<Character> guesses = new HashSet<Character>();
 	private Set<Character> correct = new HashSet<Character>();
 	// Reset the game
@@ -19,6 +43,13 @@ public class Hangman {
 	// Get the word
 	public String getWord() {
 		return word;
+	}
+	public void setWord(){
+		if(getWordlength()>1){
+			Random rand = new Random();
+			int ranNum = rand.nextInt(library.get(getWordlength()).size() - 0 + 1) + 0;			
+			this.word = library.get(getWordlength()).get(ranNum-1);
+		}
 	}
 	// Get guesses
 	public Set<Character> getGuesses() {

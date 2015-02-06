@@ -3,13 +3,7 @@ public class Node<Type> {
 	private Type data;
 	private Node<Type> next;
 	private Node<Type> prev;
-	public Node<Type> getPrev() {
-		return prev;
-	}
-	public void setPrev(Node<Type> node) {
-		this.prev = node; //thing1.prev = thing0
-		node.next = this; //thing0.next = thing1
-	}
+
 	public Type getData() {
 		return data;
 	}

@@ -20,24 +20,48 @@ public class BinaryTreeNode
 
 				}
 			}
-		} else {
-			// it goes to the left
-				if (left == null) {
-					// create a node and call it a day
-					left = new BinaryTreeNode<DataType>(moreData);
-				} else {
-					// keep looking recursively
-					left.add(moreData);
+			 else {
+					// it goes to the left
+						if (left == null) {
+							// create a node and call it a day
+							left = new BinaryTreeNode<DataType>(moreData);
+						} else {
+							// keep looking recursively
+							left.add(moreData);
+						}
+					}
+					// put it there
+		}
+			
+		
+		
+		
+		boolean contains (DataType moreData) {
+			int result = this.data.compareTo(data);
+			if (result < 0){
+				if (right == null){
+					return false;
+				}
+				else{
+					return right.contains(data);
 				}
 			}
-			// put it there
-			
+			else if(result==0){
+				return true;
+			}
+			else{
+				if (left == null){
+					return false;
+				}
+				else{
+					return left.contains(data);
+				}
+			}
 		}
+		
 	// Can you write this function?
 	// Hint: try doing what you do in the add function
-	boolean contains (DataType moreData) {
-			return false;
-		}
+
 		
 	public static void main(String[] args) {
 		System.out.println("Hello".compareTo("World"));

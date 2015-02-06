@@ -1,6 +1,8 @@
 package labs;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream.GetField;
 import java.util.Scanner;
 
 // The console user interface
@@ -15,6 +17,16 @@ public class HangmanController {
 		Scanner scanner = new Scanner(System.in);
 		char letter;
 		String line;
+		System.out.println("Enter the word's length: ");
+		int inputlength = scanner.nextInt();
+		while(inputlength>game.getMaxwordlength() || inputlength<1){
+			System.out.println("Sorry, the length is too long or too short... please use another length");
+			System.out.println("Enter the word's length: ");
+			inputlength = scanner.nextInt();
+		}
+		game.setWordlength(inputlength);
+		System.out.println(game.getWordlength());
+		game.setWord();
 		while (!game.isOver()) {
 			view(game);
 			System.out.println("Enter a letter: ");
@@ -32,9 +44,11 @@ public class HangmanController {
 		}
 	}
 	// TODO: change the constructor to use EvilHangman
-	public static void main(String[] args) throws FileNotFoundException {
-		Hangman game = new Hangman();
-		game.setWord("fly");
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+//		Hangman game = new Hangman();
+		EvilHangman game = new EvilHangman();
+		
+//		game.setWord("fly");
 		HangmanController.consoleUI(game);
 	}
 }
