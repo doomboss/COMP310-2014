@@ -22,4 +22,9 @@ public class Node<T> {
 	void accept(Visitor<T> v) {
 		v.visit(this);
 	}
+	
+	@Override
+	public boolean equals(Object o){
+		return false;
+	}
 }
