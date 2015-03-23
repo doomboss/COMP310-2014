@@ -33,15 +33,20 @@ public class HashSet<T> implements Set<T> {
 	}
 	
 	@Override
-	public boolean add(Object arg0) {
+	public boolean add(T arg0) {
 		structure.add(arg0.hashCode());
-//		Hint: use arg0.hashCode();
-//		Hint: do proper bookkeeping on the size
+//      Hint: use arg0.hashCode();
+//      Hint: do proper bookkeeping on the size
 		return false;
 	}
-
+	
 	@Override
-	public boolean contains(Object arg0) {
+	public boolean contains(Object o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean remove(Object o) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -63,11 +68,6 @@ public class HashSet<T> implements Set<T> {
 		};
 	}
 
-	@Override
-	public boolean remove(Object arg0) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	// These are all pretty similar in terms of implementation
 	@Override
@@ -95,7 +95,7 @@ public class HashSet<T> implements Set<T> {
 
 	// Don't bother implementing, unless you want to do reflection.
 	@Override
-	public Object[] toArray(Object[] arg0) {
+	public <T> T[] toArray(T[] a) {
 		// TODO Auto-generated method stub
 		return null;
 	}
