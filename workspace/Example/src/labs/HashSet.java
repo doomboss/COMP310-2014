@@ -34,6 +34,7 @@ public class HashSet<T> implements Set<T> {
 	
 	@Override
 	public boolean add(Object arg0) {
+		structure.add(arg0.hashCode());
 //		Hint: use arg0.hashCode();
 //		Hint: do proper bookkeeping on the size
 		return false;
@@ -106,4 +107,10 @@ public class HashSet<T> implements Set<T> {
 		return false;
 	}
 
+	public static void main(String[] args){
+		System.out.println("hello".hashCode());
+		System.out.println("world".hashCode());
+		
+	}
+	
 }
